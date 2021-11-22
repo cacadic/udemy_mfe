@@ -15,11 +15,11 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Install Dependencies
-      - run: yarn
+        run: yarn
         working-directory: packages/container
 
       - name: Build
-      - run: yarn build
+        run: yarn build
         working-directory: packages/container
 
       - uses: chrislennon/action-aws-cli@v1.1
