@@ -17,11 +17,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: 'npm'
-          cache-dependency-path: container/package-lock.json
-      - run: npm
+      - run: npm install
       - run: npm run build
 
       - uses: chrislennon/action-aws-cli@v1.1
