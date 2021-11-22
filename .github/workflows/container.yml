@@ -17,12 +17,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          cache-dependency-path: '**/yarn.lock' 
-      - run: yarn
-      - run: yarn build
+      - name: Use Node.js ${{ matrix.node-version }} 
+      - run: npm
+      - run: npm run build
 
       - uses: chrislennon/action-aws-cli@v1.1
       - run: aws s3 sync dist s3://${{ secrets.AWS_S3_BUCKET_NAME }}/container/latest
